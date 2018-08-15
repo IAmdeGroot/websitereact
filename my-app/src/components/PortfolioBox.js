@@ -75,8 +75,4 @@ const itemHolderMob = {
 
 }
 
-
-
-
-
 export default PortfolioBox;

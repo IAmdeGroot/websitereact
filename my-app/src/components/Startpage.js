@@ -6,7 +6,9 @@ import ContainerImg from '../img/blackandwhite.jpg';
 import Header from './Header';
 import InfoBox from './InfoBox';
 import PortfolioBox from './PortfolioBox';
+import Ball from './Ball';
 import MediaQuery from 'react-responsive';
+import {Animated} from 'react-animated-css';
 
 class Startpage extends Component {
 
@@ -27,6 +29,7 @@ class Startpage extends Component {
         <Header onAboutClick={this.onAboutMeClicked} onPortfolioClick={this.onPortfolioClicked} />
           <div style={imgandNameHolder}>
            {this.renderJDG()}
+           <Ball/>
           </div>
           
         </div>
@@ -39,6 +42,7 @@ class Startpage extends Component {
     );
   }
 
+  
   renderJDG = () => {
     return(
     <MediaQuery minDeviceWidth={1025}>
@@ -85,7 +89,7 @@ class Startpage extends Component {
     } else {
       return(
      
-      <MediaQuery minDeviceWidth={769}>
+      <MediaQuery minDeviceWidth={1025}>
         {(matches) => {
          const STYLE = matches? 
          aboutMeDesktop :
@@ -109,7 +113,7 @@ renderPortfolio = () => {
  } else {
    return(
   
-   <MediaQuery minDeviceWidth={769}>
+   <MediaQuery minDeviceWidth={1025}>
      {(matches) => {
       const STYLE = matches? 
       portfolioDesktop :
@@ -128,6 +132,8 @@ renderPortfolio = () => {
 }
 
 }
+
+
 
 const containerDivStyle ={
   backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/my-website-2d280.appspot.com/o/background.jpg?alt=media&token=56f0c921-129e-4156-a135-fcb66e2e6e77)`,
@@ -199,7 +205,7 @@ const aboutMeDesktop = {
 
 const aboutMeMobile = {
   width: '100%',
-  height: '30vh',
+  height: '70vh',
   display: 'flex',
   position: 'relative',
   transition: 'height 0.5s ease-out',

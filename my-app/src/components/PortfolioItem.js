@@ -4,7 +4,7 @@ class PortfolioItem extends Component {
 
     render(){
         return(
-            <MediaQuery minDeviceWidth={700}>
+            <MediaQuery minDeviceWidth={1025}>
             {(matches) => {
             const theSTYLE = matches? 
             containerStyle :
@@ -28,7 +28,7 @@ class PortfolioItem extends Component {
 
 renderTitle = () => {
     return(
-        <MediaQuery minDeviceWidth={700}>
+        <MediaQuery minDeviceWidth={1025}>
         {(matches) => {
             const STYLE = matches? 
             titleDesktop :
@@ -50,8 +50,8 @@ const imgStyle = {
 const containerStyle = {
     display: 'flex',
     flexWrap: 'wrap',
-    width: '25%',
-    height: '90%%',
+    width: '15vw',
+    height: '20vh',
     borderStyle: 'solid',
     borderColor: 'white',
     margin: '1%',
@@ -60,8 +60,8 @@ const containerStyle = {
 const containerMobile = {
     display: 'flex',
     flexWrap: 'wrap',
-    width: '50%',
-    height: '80%',
+    width: '20vh',
+    height: '20vh',
     margin: '1%',
     borderStyle: 'solid',
     borderColor: 'white',
@@ -94,7 +94,7 @@ const titleDesktop = {
 }
 
 const titleMobile = {
-    fontSize: '4vw',
+    fontSize: '3.5vw',
     fontFamily: 'Raleway',
     color: 'white',
     alignSelf: 'center'

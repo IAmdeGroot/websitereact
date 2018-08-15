@@ -5,7 +5,10 @@
   "dependencies": {
     "flexbox-react": "^4.4.0",
     "react": "^16.4.2",
+    "react-animated": "^0.1.0",
+    "react-animated-css": "^1.0.4",
     "react-dom": "^16.4.2",
+    "react-motion": "^0.5.2",
     "react-responsive": "^5.0.0",
     "react-scripts": "1.1.4",
     "simple-flexbox": "^1.2.0"

@@ -40,15 +40,17 @@ const headerMobileStyle = {
     width: '100%',
     backgroundColor: 'rgba(0,0,0,0.5)',
     display: 'flex',
-    //justifyContent: 'center',
+    justifyContent: 'space-around',
     position: 'absolute',
    
 }
 
 const headerDesktopStyle ={
     height: '100px',
-    width: '400px',
-    backgroundColor: 'transparent',
+    //width: '400px',
+    width: '100%',
+    //backgroundColor: 'transparent',
+    backgroundColor: 'rgba(0,0,0,0.5)',
     display: 'flex',
     position: 'relative',
     justifyContent: 'flex-start',

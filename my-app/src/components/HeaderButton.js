@@ -19,7 +19,7 @@ const headerButtonStyle ={
     position: 'aboslute',
     alignSelf: 'center',
     justifyContent: 'center',
-    //margin: '0.5vw',
+    //margin: '2vw',
     backgroundColor: 'transparent',
     border: '0',
     outlineColor: 'white',
@@ -40,7 +40,7 @@ const buttonMobileStyle ={
     backgroundColor: 'rgba(0,0,0,0.5)',
     border: '0',
     color: 'white',
-    fontSize: '1vh',
+    fontSize: '1vw',
     justifyContent: 'center',
 
 }

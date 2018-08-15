@@ -10,7 +10,22 @@ class InfoBox extends Component {
             
             <div style={this.props.style}>
             <div style={textHolder}>
-            <p style={textStyle}> 
+            {this.renderText()}
+            </div>
+             </div>
+
+        );
+    }
+
+renderText = () => {
+    return(
+    <MediaQuery minDeviceWidth={1025}>
+    {(matches)  => {
+          const STYLE = matches ?
+          textDesktop :
+          textMobile
+          return(
+            <p style={STYLE}> 
             Jag har blivit kallad avväpnande. Själv ser jag mig som en driven, organiserad och engagerad person som brinner för utveckling och IT. Utöver studiernas traditionella fokus på programspråk som JAVA och SQL besitter jag ett stort intresse för apputveckling då jag på fritiden spenderar tid med React Native (Javascript, CSS, React) för att skapa applikationer. <br/> <br/>
                         
             Hos mig finns även ett intresse för UX, användarcentrerad utveckling och design. Detta är något som återspeglas på mig som person då kvalitet och funktionalitet ligger i fokus på allt jag tar mig an. 
@@ -18,11 +33,14 @@ class InfoBox extends Component {
                         
             Jag lämnar gärna referenser vid förfrågan!
             </p>
-            </div>
-             </div>
 
-        );
-    }
+          );
+
+    }}
+    </MediaQuery>
+    );
+}
+
 }
 
 
@@ -37,8 +55,15 @@ const textHolder = {
     
 }
 
-const textStyle ={
+const textDesktop ={
     fontSize: '1.8vw',
+    color: 'white',
+    fontFamily: 'Architects Daughter'
+
+}
+
+const textMobile ={
+    fontSize: '2vh',
     color: 'white',
     fontFamily: 'Architects Daughter'
 

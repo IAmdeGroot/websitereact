@@ -7,13 +7,8 @@ class ItemHolder extends Component {
 
     render() {
         return(
-            <div style={itemHolderStyle}>
-              
-               
+            <div style={itemHolderStyle}> 
             </div>
-            
-            
-
         );
     }
 }
