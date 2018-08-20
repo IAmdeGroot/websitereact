@@ -7,6 +7,7 @@ import Header from './Header';
 import InfoBox from './InfoBox';
 import PortfolioBox from './PortfolioBox';
 import Ball from './Ball';
+import Letter from './Letter';
 import MediaQuery from 'react-responsive';
 import {Animated} from 'react-animated-css';
 
@@ -18,7 +19,6 @@ class Startpage extends Component {
      
   }
 
-
   render() {
     return (
       <div>
@@ -27,11 +27,7 @@ class Startpage extends Component {
         </div>
       
         <Header onAboutClick={this.onAboutMeClicked} onPortfolioClick={this.onPortfolioClicked} />
-          <div style={imgandNameHolder}>
            {this.renderJDG()}
-           <Ball/>
-          </div>
-          
         </div>
           <div style={boxContainer}>
         {this.renderAboutMe()}
@@ -50,8 +46,24 @@ class Startpage extends Component {
       const STYLE = matches ?
       jdgDesktop :
       jdgMobile
+      const LETTER = matches ?
+      letterHolder :
+      letterHolderMobile
+
       return(
-      <h1 style={STYLE}> JDG. </h1>
+        <div style={LETTER}>
+        <Animated style={letterAnimation} animationIn="bounceInLeft" isVisible={true} animationInDelay={1500}>
+      <Letter style={STYLE} title='J' />
+        </Animated>
+
+      <Animated style={letterAnimation} animationIn="bounceInDown" isVisible={true} animationInDelay={1000}>
+      <Letter style={STYLE} title='D' />
+      </Animated>
+
+      <Animated style={letterAnimation} animationIn="bounceInRight" isVisible={true} animationInDelay={2000}>
+      <Letter style={STYLE} title='G.' />
+      </Animated>
+      </div>
       ); 
   }}
   </MediaQuery>
@@ -95,10 +107,12 @@ class Startpage extends Component {
          aboutMeDesktop :
          aboutMeMobile
          return(
-
+      
+      <Animated style={aboutAnimation} animationIn="slideInDown" animationOut="slideOutUp">
       <div style={STYLE}>
-      <InfoBox onCrossClick={this.onCrossClickedAbout} style={aboutmeBoxStyle}/>
+      <InfoBox style={aboutmeBoxStyle}/>
       </div>
+      </Animated>
          );
         }}
       </MediaQuery>
@@ -120,9 +134,11 @@ renderPortfolio = () => {
       portfolioMobile
       return(
 
+   <Animated style={portAnimation} animationIn="slideInDown">
    <div style={STYLE}>
-   <PortfolioBox onCrossClick={this.onCrossClickedPortfolio} style={portfolioBoxStyle}/>
+   <PortfolioBox style={portfolioBoxStyle}/>
    </div>
+   </Animated>
       );
      }}
    </MediaQuery>
@@ -162,7 +178,8 @@ const jdgDesktop = {
     fontSize: '8vw' ,
     fontFamily: 'Yeseva One',
     alignSelf: 'center',
-    color: 'white'   
+    color: 'white',
+    
 }
 
 const jdgMobile = {
@@ -172,17 +189,37 @@ const jdgMobile = {
   color: 'white'   
 }
 
-const imgandNameHolder ={
-  width: '60%',
-  height: '70%',
+const letterAnimation = {
+  display: 'flex',
+  alignContent: 'center',
+  justifyContent: 'center',
+  
+}
+
+const letterHolder ={
+  width: '20vw',
+  height: '12vw',
   position: 'absolute',
   display: 'flex',
-  marginTop: '3%',
   justifyContent: 'center',
-  flexDirection: 'column',
+  alignContent: 'center',
+  flexDirection: 'row',
   alignSelf: 'center',
-  //backgroundImage: `url(${BackgroundImg})`,
-  //backgroundSize: 'cover',
+  //borderColor: 'white',
+  //borderStyle: 'solid'
+}
+
+const letterHolderMobile ={
+  width: '250px',
+  height: '200px',
+  position: 'absolute',
+  display: 'flex',
+  justifyContent: 'center',
+  alignContent: 'center',
+  flexDirection: 'row',
+  alignSelf: 'center',
+  //borderColor: 'white',
+  //borderStyle: 'solid'
 }
 
 const boxContainer ={
@@ -213,6 +250,19 @@ const aboutMeMobile = {
   //borderColor:'purple'
 }
 
+const aboutmeBoxStyle = {
+  display: 'flex',
+  justifyContent: 'center',
+  width: '100%',
+  backgroundColor: 'rgba(0,0,0,0.8)',
+  
+}
+
+const aboutAnimation = {
+  display: 'flex',
+  justifyContent: 'center',
+}
+
 const portfolioDesktop = {
   width: '70%',
   display: 'flex',
@@ -229,14 +279,6 @@ const portfolioMobile = {
   transition: 'height 0.5s ease-out',
 }
 
-const aboutmeBoxStyle = {
-  display: 'flex',
-  justifyContent: 'center',
-  width: '100%',
-  backgroundColor: 'rgba(0,0,0,0.8)',
-  
-}
-
 const portfolioBoxStyle = {
   display: 'flex',
   width: '100%',
@@ -244,5 +286,16 @@ const portfolioBoxStyle = {
   flexDirection: 'column'
 
 }
+
+const portAnimation = {
+  display:'flex',
+  width:'100%',
+  alignContent: 'center',
+  justifyContent: 'center'
+}
+
+
+
+
 
 export default Startpage;

@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 import {Animated} from 'react-animated-css';
 
-class Ball extends Component {
+class Letter extends Component {
 
     render() {
         
         return(
-            <Animated style={ball} animationIn="bounceInLeft" isVisible={true} animationInDelay={2000}>
-            <div>
-            
-            </div>
-            </Animated>
+          
+            <h1 style={this.props.style}> {this.props.title} </h1>
+          
             
         );
     } 
@@ -27,4 +25,4 @@ const ball = {
     transition: 'height 2s ease-in, opacity 0.5s ease-in',
   }
 
-  export default Ball;
+  export default Letter;
